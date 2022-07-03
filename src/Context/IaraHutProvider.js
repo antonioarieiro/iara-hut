@@ -3,6 +3,8 @@ import axios from 'axios';
 import Data from '../Data/IngredientsData';
 import { IaraHutContext } from './IaraHutContext';
 
+let acc = []
+
 export const IaraHutProvider = ({ children }) => {
   const [selectedOption, setSelectedOption] = useState('Pizzas');
   const [showCart, setShowCart] = useState(false);
@@ -11,6 +13,8 @@ export const IaraHutProvider = ({ children }) => {
   const [selectedItemDetail, setSelectedItemDetail] = useState([]);
   const [items, setItems] = useState([]);
   const [qnt, setQnt] = useState(0);
+  const [price, setPrice] = useState(0);
+  const [descount, setDescount] = useState(0)
 
   const api = axios.create({
     baseURL: "https://www.thecocktaildb.com/",
@@ -26,13 +30,15 @@ export const IaraHutProvider = ({ children }) => {
 
   const addCart = (id) => {
     const added = Data.filter(val => val.id === id);
-    setItems(added);
-    localStorage.setItem('session', JSON.stringify(added))
+    acc.push(added);
+    setItems(acc);
+    localStorage.setItem('session', JSON.stringify(acc));
   }
+
   const removeCart = (id) => {
-    const added = items.filter(val => val.id != id);
+    const added = items.filter(val => val[0].id !== id);
     setItems(added);
-    localStorage.setItem('session', JSON.stringify(added))
+    localStorage.setItem('session', JSON.stringify(added));
   }
   const cartControl = (type, id) => {
     if (type === "add") {
@@ -49,13 +55,36 @@ export const IaraHutProvider = ({ children }) => {
   }
 
   const itemDetailsControl = (type, item) => {
-    if(type === 'show'){
+    if (type === 'show') {
       setShowItemsDetails(true);
       setSelectedItemDetail(item)
     }
-    if(type === 'hidden'){
+    if (type === 'hidden') {
       setShowItemsDetails(false);
     }
+  }
+
+  const clearCart = () => {
+    acc = []
+    localStorage.setItem('session', JSON.stringify([]))
+    setItems([])
+    setShowCart(false);
+    setQnt(0);
+    setPrice(0)
+  }
+
+  const currentPrice = () => {
+    let sum = 0;
+    var descounted = 0;
+    var aValue = JSON.parse(localStorage.getItem('session'));
+    let prices = aValue.map((val) =>
+      val[0].promotion ? sum += val[0].price - parseInt(val[0].promotion) / 100 * val[0].price : sum = sum + val[0].price
+    );
+    let total = aValue.map((val) => descounted += val[0].price);
+    const end = total[total.length - 1];
+    const last = prices[prices.length - 1]
+    setPrice(last)
+    setDescount(end)
   }
 
   return (
@@ -66,15 +95,19 @@ export const IaraHutProvider = ({ children }) => {
         items,
         showCart,
         qnt,
+        price,
         showItemDetails,
         selectedItemDetail,
+        descount,
         setShowCart,
         setSelectedOption,
         fetchDrinks,
         cartControl,
         setItems,
         setQnt,
-        itemDetailsControl
+        itemDetailsControl,
+        clearCart,
+        currentPrice
       }}>
       {children}
     </IaraHutContext.Provider>

@@ -8,7 +8,6 @@ export default function CartButton() {
   useEffect(() => {
     var aValue = JSON.parse(localStorage.getItem('session'));
    if(aValue) {
-    console.log('dale',aValue);
     setQnt(aValue.length);
    }
    

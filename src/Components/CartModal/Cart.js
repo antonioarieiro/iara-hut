@@ -4,19 +4,13 @@ import OrderDetails from './OrderDetails';
 import PaymentDetails from './PaymentDetails';
 
 export default function Cart() {
-  const { showCart, setShowCart, setItems, setQnt, items } = React.useContext(IaraHutContext);
+  const { showCart, setShowCart, setItems, items, clearCart } = React.useContext(IaraHutContext);
   
   useEffect(() => {
     var aValue = JSON.parse(localStorage.getItem('session'));
     setItems(aValue)
   }, []);
 
-  const clearCart = () => {
-    localStorage.setItem('session', JSON.stringify([]))
-    setItems([])
-    setShowCart(false);
-    setQnt(0);
-  }
   return (
     <>
       <div className={
