@@ -33,7 +33,7 @@ export default function OrderDetails() {
           <div className="flex flex-col">
             <div className="flex justify-between items-center">
               <p>Subtotal: </p>
-              <span>R$ {items.length > 0 && price},00</span>
+              <span>R$ {items.length > 0 && descount},00</span>
             </div>
 
             <div className="flex justify-between items-center">
