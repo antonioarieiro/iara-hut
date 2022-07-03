@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import * as React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import { IaraHutProvider } from './Context/IaraHutProvider';
+import Pages from './Pages';
+import Component from './Components/index';
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <IaraHutProvider>
+        <Component.Cart />
+        <Component.Details />
+        <Component.Header />
+        <div className="default-home overflow-hidden">
+          <Routes>
+            <Route path='/' element={<Pages.Home />} />
+          </Routes>
+        </div>
+      </IaraHutProvider>
+    </>
   );
 }
-
-export default App;
