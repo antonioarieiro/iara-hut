@@ -52,3 +52,9 @@ para vizualiar os items em seu carrinho basta clicar no botao de selecionados.
 #3 - O produto do dia, automaticamente gera um desconto de 20%
 <br/>
 ![image](https://user-images.githubusercontent.com/67910335/177022448-8c6533c9-c30e-415d-93f4-ba9199e98994.png)
+<br/>
+4 - Ao clicar na imagem, titulo ou descrição de um produto é possivel ver os detalhes e remover caracteristicas
+<br/>
+![image](https://user-images.githubusercontent.com/67910335/177022597-98720e04-1b6a-4de0-aafa-44e1048f4b8f.png)
+<br/>
+![image](https://user-images.githubusercontent.com/67910335/177022607-4966e393-a5a8-421a-8931-e82699ff60f6.png)
