@@ -7,11 +7,11 @@ export default function CartButton() {
   const { setShowCart, qnt, setQnt } = React.useContext(IaraHutContext);
   useEffect(() => {
     var aValue = JSON.parse(localStorage.getItem('session'));
-   {
-    if(aValue.length > 0) {
-      setQnt(aValue.length)
-    }
+   if(aValue) {
+    console.log('dale',aValue);
+    setQnt(aValue.length);
    }
+   
   }, []);
   return (
     <>

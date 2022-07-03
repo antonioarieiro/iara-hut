@@ -21,13 +21,18 @@ export default function Pizzas(props) {
               className="w-20"
               />
               <div
-               onClick={() =>itemDetailsControl('show', val)}
                 className="flex flex-col truncate ml-4"
               >
-                <h1 className="font-bold cursor-default">
+                <h1 
+                className="font-bold cursor-default"
+                onClick={() =>itemDetailsControl('show', val)}
+                >
                   {val.type}
                 </h1>
-                <p className="truncate cursor-default">
+                <p 
+                 onClick={() =>itemDetailsControl('show', val)}
+                className="truncate cursor-default"
+                >
                   {val.ingredients}
                 </p>
                 <p className="font-bold">
