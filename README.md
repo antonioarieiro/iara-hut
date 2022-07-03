@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+### Compilando o Projeto
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+primeiramente clone o projeto
 
-## Available Scripts
+    $ git clone https://github.com/antonioarieiro/iara-hut.git
+    
 
-In the project directory, you can run:
+<!--endsec-->
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
 
-### `npm start`
+Feito isso va ate o diretorio 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+    $ cd iara-hut
+    
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<!--endsec-->
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
 
-### `npm test`
+dentro da raiz instale as dependencias do projeto com
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    $ npm install
+    ou se utilizar yarn
+    $ yarn install
 
-### `npm run build`
+<!--endsec-->
+<!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+depois basta rodar o projeto com 
+    $ npm start
+    ou se utiliza yarn
+    $ yarn start
+<!--endsec-->
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+a aplicação vai iniciar no browser na porta 3000
+![image](https://user-images.githubusercontent.com/67910335/177022249-4786b30f-c810-4d01-941e-3a12820c930f.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Features
+1 - Adicionar um produto ao carrinho:
+`Ao clicar no botao de adição isso insere o produto em seu carinho` <br/>
+![image](https://user-images.githubusercontent.com/67910335/177022291-752479b9-f39b-4e92-9244-9a7c57a243fc.png)
+<br/>
+para vizualiar os items em seu carrinho basta clicar no botao de selecionados.
+<br/>
+![image](https://user-images.githubusercontent.com/67910335/177022327-3565db29-ac4c-4bb8-b435-b63038dd1c10.png)
+<br/>
+2 -  Os itens adicionados ao carrinho permancem mesmo com a atualização da pagina
+<br/>
+![image](https://user-images.githubusercontent.com/67910335/177022422-dd822ab9-4d14-4111-9863-a0ce288747c0.png)
+<br/>
+#3 - O produto do dia, automaticamente gera um desconto de 20%
+<br/>
+![image](https://user-images.githubusercontent.com/67910335/177022448-8c6533c9-c30e-415d-93f4-ba9199e98994.png)
