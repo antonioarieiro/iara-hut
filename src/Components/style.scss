@@ -1,0 +1,75 @@
+$yellow-bg: #F1E93B;
+$green-bg: #229954;
+$text-white: #fff;
+$gray-scale: #EAF2F8;
+$promotion-color: #CD6155;
+
+.points-btn {
+  background: $yellow-bg;
+  padding: 4px;
+}
+
+.main-option {
+  background: $gray-scale;
+  border-radius: 5px;
+  padding: 2px;
+
+  .btn-option-selected {
+    color: $text-white;
+    padding: 4px;
+    background: $green-bg;
+    font-weight: 700;
+    border-radius: 5px;
+    -webkit-transition: background 0.5s ease-in;
+    -moz-transition: background 0.5s ease-in;
+    -o-transition: background 0.5s ease-in;
+  }
+
+  .btn-option-default {
+    padding: 4px;
+    font-weight: 500;
+  }
+}
+
+.btn-promotion {
+  background: $promotion-color;
+  border-radius: 100%;
+  padding: 6px;
+}
+
+.btn-dayPizza {
+  font-family: 'Kdam Thmor Pro', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+  background: $green-bg;
+  border-radius: 100%;
+  padding: 8px;
+}
+
+.btn-add {
+  background: $yellow-bg;
+  border-radius: 100%;
+  &:hover {
+    background: $green-bg;
+  }
+}
+
+.bluring {
+  filter: blur(4px);
+  opacity: 0.3;
+
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 20px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: $yellow-bg;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+  background: $yellow-bg;
+}
