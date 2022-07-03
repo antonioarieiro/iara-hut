@@ -6,7 +6,7 @@ export default function OrderDetails() {
   return (
     <>
       {
-        showCart && items.length > 0 && 
+        showCart && items  && 
         <div className="border-2 flex flex-col w-4/12 shadow-2xl p-8 mt-8">
           <p className="text-sm mt-4">Seu pedido em</p>
           <div className="flex items-center justify-between mt-6">
