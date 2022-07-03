@@ -1,4 +1,5 @@
 ### Compilando o Projeto
+Preview url: https://leafy-gaufre-6ed965.netlify.app/
 <!--sec data-title="Prompt: OS X and Linux" data-id="OSX_Linux_prompt" data-collapse=true ces-->
 
 primeiramente clone o projeto
