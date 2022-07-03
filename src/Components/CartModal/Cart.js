@@ -4,7 +4,7 @@ import OrderDetails from './OrderDetails';
 import PaymentDetails from './PaymentDetails';
 
 export default function Cart() {
-  const { showCart, setShowCart, setItems, setQnt } = React.useContext(IaraHutContext);
+  const { showCart, setShowCart, setItems, setQnt, items } = React.useContext(IaraHutContext);
   
   useEffect(() => {
     var aValue = JSON.parse(localStorage.getItem('session'));
@@ -42,7 +42,7 @@ export default function Cart() {
         className="points-btn  w-28 flex mx-auto mt-2 font-bold rounded-lg mb-8"
         onClick={() => {clearCart()}}
         >
-           Realizar Pedido 
+           { items.length > 0 ? 'Finalizar Pedido' : 'Carrinho vazio'}
         </button>
       </div>
     </>

@@ -1,8 +1,9 @@
 import React from 'react';
 import PizzasData from '../../Data/IngredientsData';
 import PromotionButton from './PromotionBtn';
-import { GrAddCircle } from "react-icons/gr";
-export default function Promotions() {
+import AddButton from './AddItemButton';
+export default function Promotions(props) {
+  const { itemDetailsControl } = props;
   return (
     <>
       <div className="md:w-11/12 flex-wrap flex ml-4 mr-4 p-2 justify-between">
@@ -14,20 +15,29 @@ export default function Promotions() {
                 key={index}
                 className="flex items-center justify-between w-96 mb-8 border p-2"
               >
-                <img src={val.img} alt="" className="w-20" />
+                <img
+                  src={val.img}
+                  alt=""
+                  className="w-20"
+                  onClick={() => itemDetailsControl('show', val)}
+                />
                 <div
                   className="flex flex-col truncate ml-4"
                 >
-                  <h1>
+                  <h1
+                  className="cursor-pointer"
+                    onClick={() => itemDetailsControl('show', val)}
+                  >
                     {val.type}
+
                   </h1>
-                  <p className="truncate">
+                  <p
+                    onClick={() => itemDetailsControl('show', val)}
+                    className="truncate cursor-pointer">
                     {val.ingredients}
                   </p>
                   <div className="w-full flex justify-end items-end">
-                    <button className="btn-add">
-                      <GrAddCircle />
-                    </button>
+                  <AddButton id={val.id} />
                   </div>
                 </div>
                 {
@@ -43,7 +53,7 @@ export default function Promotions() {
                   </div>
                 }
               </div>
-            : ''
+              : ''
           ))
         }
       </div>
