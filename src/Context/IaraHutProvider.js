@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import Data from '../Data/IngredientsData';
 import { IaraHutContext } from './IaraHutContext';
 
@@ -9,24 +8,11 @@ export const IaraHutProvider = ({ children }) => {
   const [selectedOption, setSelectedOption] = useState('Pizzas');
   const [showCart, setShowCart] = useState(false);
   const [showItemDetails, setShowItemsDetails] = useState(false);
-  const [drinks, setDrinks] = useState([]);
   const [selectedItemDetail, setSelectedItemDetail] = useState([]);
   const [items, setItems] = useState([]);
   const [qnt, setQnt] = useState(0);
   const [price, setPrice] = useState(0);
   const [descount, setDescount] = useState(0)
-
-  const api = axios.create({
-    baseURL: "https://www.thecocktaildb.com/",
-  });
-
-  const fetchDrinks = async () => {
-    await api.get("api/json/v1/1/search.php?f=a")
-      .then((response) => setDrinks(response.data))
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
-      });
-  }
 
   const addCart = (id) => {
     const added = Data.filter(val => val.id === id);
@@ -74,24 +60,26 @@ export const IaraHutProvider = ({ children }) => {
   }
 
   const currentPrice = () => {
-    let sum = 0;
-    var descounted = 0;
-    var aValue = JSON.parse(localStorage.getItem('session'));
-    let prices = aValue.map((val) =>
-      val[0].promotion ? sum += val[0].price - parseInt(val[0].promotion) / 100 * val[0].price : sum = sum + val[0].price
-    );
-    let total = aValue.map((val) => descounted += val[0].price);
-    const end = total[total.length - 1];
-    const last = prices[prices.length - 1]
-    setPrice(last)
-    setDescount(end)
+    if(JSON.parse(localStorage.getItem('session'))) {
+      let sum = 0;
+      var descounted = 0;
+      var aValue = JSON.parse(localStorage.getItem('session'));
+      let prices = aValue.map((val) =>
+        val[0].promotion ? sum += val[0].price - parseInt(val[0].promotion) / 100 * val[0].price : sum = sum + val[0].price
+      );
+      let total = aValue.map((val) => descounted += val[0].price);
+      const end = total[total.length - 1];
+      const last = prices[prices.length - 1]
+      setPrice(last)
+      setDescount(end)
+    }
+   
   }
 
   return (
     <IaraHutContext.Provider
       value={{
         selectedOption,
-        drinks,
         items,
         showCart,
         qnt,
@@ -101,7 +89,6 @@ export const IaraHutProvider = ({ children }) => {
         descount,
         setShowCart,
         setSelectedOption,
-        fetchDrinks,
         cartControl,
         setItems,
         setQnt,
