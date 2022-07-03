@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { IaraHutContext } from '../Context/IaraHutContext';
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import './style.scss';
 
 export default function CartButton() {
-  const { setShowCart, qnt } = React.useContext(IaraHutContext);
+  const { setShowCart, qnt, setQnt } = React.useContext(IaraHutContext);
+  useEffect(() => {
+    var aValue = JSON.parse(localStorage.getItem('session'));
+    setQnt(aValue.length)
+  }, []);
   return (
     <>
       <button

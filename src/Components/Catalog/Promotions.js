@@ -31,7 +31,7 @@ export default function Promotions() {
                   </div>
                 </div>
                 {
-                  val.promotion &&
+                  val.promotion && !val.dayPizza &&
                   <div>
                     <PromotionButton promotion={val.promotion} />
                   </div>
