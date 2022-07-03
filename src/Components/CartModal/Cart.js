@@ -42,7 +42,7 @@ export default function Cart() {
         className="points-btn  w-28 flex mx-auto mt-2 font-bold rounded-lg mb-8"
         onClick={() => {clearCart()}}
         >
-           { items.length > 0 ? 'Finalizar Pedido' : 'Carrinho vazio'}
+           { items  ? 'Finalizar Pedido' : 'Carrinho vazio'}
         </button>
       </div>
     </>
