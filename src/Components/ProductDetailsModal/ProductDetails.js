@@ -52,7 +52,7 @@ export default function ProductDetails() {
                 <div className=" w-11/12 mt-8 flex items-center flex-col overflow-y-scroll scrollbar max-h-48">
                   <p className="font-bold text-lg text-center justify-center flex my-auto bg-gray-300 min-h-20 border w-11/12"
                   >
-                    Escolha o tipo de Massa
+                   {selectedItemDetail.isPizza ?  'Escolha o tipo de Massa' : 'Escolha o tipo de Pão'}
                   </p>
                   <div className="w-11/12 mt-2">
                     {

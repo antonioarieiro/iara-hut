@@ -82,7 +82,9 @@ const options = [
     price: 60.00,
     img: 'https://i.pinimg.com/originals/44/bb/b9/44bbb91b8560c2c71a0bfccba0554051.png',
     isPizza: false,
-    promotion: '20%'
+    promotion: '20%',
+    massa:['Pão caseiro', 'Pão Frances', 'Pão Arabe', 'Tradicional'],
+    add: ['Carne', 'Queijo', 'Catupiry', 'ovo']
   },
   {
     id: 9,
@@ -92,6 +94,8 @@ const options = [
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxQ4mD89A_9oem-N53qp_9EU22BSob7ps12jMydWHLCBznOiVjYnRkQW2F_Tyc0wsh154&usqp=CAU',
     isPizza: false,
     dayHamburguer: 'Top Burguer',
+    massa:['Pão caseiro', 'Pão Frances', 'Pão Arabe', 'Tradicional'],
+    add: ['Carne', 'Queijo', 'Catupiry', 'ovo']
   },
   {
     id: 10,
@@ -100,7 +104,9 @@ const options = [
     price: 20.00,
     img: 'https://yummmy.s3.amazonaws.com/items/images/000/150/986/regular/0c9ea046015a690e8f3db995fbd46a4f.png?1492011100',
     isPizza: false,
-    promotion: '20%'
+    promotion: '20%',
+    massa:['Pão caseiro', 'Pão Frances', 'Pão Arabe', 'Tradicional'],
+    add: ['Carne', 'Queijo', 'Catupiry', 'ovo']
   },
   {
     id: 11,
@@ -109,7 +115,9 @@ const options = [
     price: 18.00,
     img: 'https://hamburguereloy.files.wordpress.com/2021/03/xburguer.png?w=406',
     isPizza: false,
-    promotion: '20%'
+    promotion: '20%',
+    massa:['Pão caseiro', 'Pão Frances', 'Pão Arabe', 'Tradicional'],
+    add: ['Carne', 'Queijo', 'Catupiry', 'ovo']
   },
 ];
 
