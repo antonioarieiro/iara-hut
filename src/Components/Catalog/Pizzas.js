@@ -15,29 +15,42 @@ export default function Pizzas(props) {
               className="flex items-center justify-between w-96 mb-8 border p-2"
             >
               <img
-               onClick={() =>itemDetailsControl('show', val)}
-              src={val.img}
-              alt=""
-              className="w-20"
+                onClick={() => itemDetailsControl('show', val)}
+                src={val.img}
+                alt=""
+                className="w-20"
               />
               <div
                 className="flex flex-col truncate ml-4"
               >
-                <h1 
-                className="font-bold cursor-default"
-                onClick={() =>itemDetailsControl('show', val)}
+                <h1
+                  className="font-bold cursor-default"
+                  onClick={() => itemDetailsControl('show', val)}
                 >
                   {val.type}
                 </h1>
-                <p 
-                 onClick={() =>itemDetailsControl('show', val)}
-                className="truncate cursor-default"
+                <p
+                  onClick={() => itemDetailsControl('show', val)}
+                  className="truncate cursor-default"
                 >
                   {val.ingredients}
                 </p>
-                <p className="font-bold">
-                  R$: {val.price}
-                </p>
+                {
+                  val.promotion
+                    ?
+                    <div className="flex flex-col font-bold">
+                      <p className="font-bold">
+                        De: R$: {val.price},00
+                      </p>
+                      <p className="font-bold">
+                        Por: R$: {val.price - parseInt(val.promotion) / 100 * val.price},00
+                      </p>
+                    </div>
+                    : <p className="font-bold">
+                      Valor: R$: {val.price},00
+                    </p>
+                }
+
                 <div className="w-full flex justify-end items-end">
                   <AddButton id={val.id} />
                 </div>
