@@ -57,7 +57,7 @@ export default function Hamburguers(props) {
                 </div>
               </div>
               {
-                val.promotion && !val.dayPizza &&
+                val.promotion && !val.dayHamburguer &&
                 <div>
                   <PromotionButton promotion={val.promotion} />
                 </div>
