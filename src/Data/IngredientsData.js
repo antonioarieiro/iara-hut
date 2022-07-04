@@ -94,6 +94,7 @@ const options = [
     img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxQ4mD89A_9oem-N53qp_9EU22BSob7ps12jMydWHLCBznOiVjYnRkQW2F_Tyc0wsh154&usqp=CAU',
     isPizza: false,
     dayHamburguer: 'Top Burguer',
+    promotion: '20%',
     massa:['Pão caseiro', 'Pão Frances', 'Pão Arabe', 'Tradicional'],
     add: ['Carne', 'Queijo', 'Catupiry', 'ovo']
   },
