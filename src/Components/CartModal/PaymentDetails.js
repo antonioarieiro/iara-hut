@@ -47,7 +47,7 @@ export default function PaymentDetails() {
           <div className="flex flex-col w-5/6 border mt-4 border-yellow-200 rounded-lg">
             <div className="ml-8">
               <p className="text-sm mb-2">Padrão</p>
-              <p className="mb-2"> Valor da Corida:</p>
+              <p className="mb-2"> Valor da Corrida:</p>
               <p className="font-bold">R$ 5,99</p>
             </div>
           </div>
