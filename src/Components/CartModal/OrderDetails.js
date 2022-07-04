@@ -33,12 +33,12 @@ export default function OrderDetails() {
           <div className="flex flex-col">
             <div className="flex justify-between items-center">
               <p>Subtotal: </p>
-              <span>R$ {items.length > 0 && descount},00</span>
+              <span>R$ {items.length > 0 ? descount : '0'},00</span>
             </div>
 
             <div className="flex justify-between items-center">
               <p className="font-bold">Desconto:  </p>
-              <span className="font-bold">R$: {descount - price},00</span>
+              <span className="font-bold">R$: {items.length > 0 ? descount - price : '0'},00</span>
             </div>
             <div className="flex justify-between items-center">
               <p>Taxa de entrega: </p>
@@ -47,7 +47,7 @@ export default function OrderDetails() {
             <div className="flex justify-between items-center">
               <p className="font-bold">Total: </p>
               <span>
-                <span className="font-bold"> R$ {price + 5.99}</span>
+                <span className="font-bold"> R$ {items.length > 0 && price ? price + 5.99 : '0'}</span>
               </span>
             </div>
           </div>

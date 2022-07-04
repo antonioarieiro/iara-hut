@@ -26,7 +26,7 @@ const options = [
     id: 3,
     type: 'Mussarela',
     ingredients: 'Mussarela, Queijo, Cebola, Barbecue',
-    price: 30.00,
+    price: 35.00,
     img: 'https://i.pinimg.com/originals/fe/fa/bf/fefabfd88eac6242acff8bf0e4f2c030.png',
     isPizza: true,
     promotion: '20%',

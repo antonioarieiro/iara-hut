@@ -28,7 +28,7 @@ export default function ListOrder(props) {
                 <p className="font-bold">
                  Total:
                 </p>
-                <p className="font-bold">R$: {val[0].promotion ? val[0].price - parseInt(val[0].promotion) / 100 * val[0].price : val[0].price},00</p>
+                <p className="font-bold">R$: {val[0].promotion ? val[0].price - parseInt(val[0].promotion) / 100 * val[0].price : val[0].price.toFixed},00</p>
               </div>
             </div>
             <button button
